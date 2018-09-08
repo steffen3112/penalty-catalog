@@ -9,15 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './components/home/home.module#HomePageModule'
   },
   {
     path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    loadChildren: './components/list/list.module#ListPageModule'
   },
   {
     path: 'settings', 
-    loadChildren: './settings/settings.module#SettingsPageModule' 
+    loadChildren: './components/settings/settings.module#SettingsPageModule' 
   }
 ];
 
