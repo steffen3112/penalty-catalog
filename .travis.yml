@@ -5,14 +5,20 @@ branches:
   only:
   - master
   - development
-before_script:
-- npm install -g ionic cordova
-- npm install -g @angular/cli
+
+before_install: 
+  - npm install npm@latest -g
+  - cd client/
+
+install:
+  - npm install -g ionic cordova
+  - npm install -g @angular/cli
+
 script:
-- cd client/
-- npm run lint
-- npm run test
-- npm run e2e
+  - cd client/
+  - npm run lint
+  - npm run test
+  - npm run e2e
 deploy:
   provider: heroku
   api_key:
