@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: './pages/list/list.module#ListPageModule'
   },
   {
-    path: 'settings', 
-    loadChildren: './pages/settings/settings.module#SettingsPageModule' 
+    path: 'settings',
+    loadChildren: './pages/settings/settings.module#SettingsPageModule'
   }
 ];
 

@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- "10.9.0"
+branches:
+  only:
+  - master
+  - development
+before_script:
+- npm install -g ionic cordova
+script:
+- cd client/
+- npm run lint
+- npm run test
+- npm run e2e
+deploy:
+  provider: heroku
+  api_key:
+    secure: aPpJeWPQBqTPtB+kc8MkPcBbVqvga4wnNuKI0xLngJV0sPyu14l9J2ybofae4IfV9JkjKieoBVuRLO2s1MQuZ/EljP/3mKcPgIY8J4c5/IBq/FVKTt7HxDZPDCxTOeeg5UpfBpDSFwWtzfVyNhQWcQFVX5hYl/9Ws1EUC8GveixEirQogcoUJRPAvh1d3vjzs00ElVY1cy5wIgm++9JHWV5U1UhHIadgkuO30ntCs67Pzau0AT5OcvnLrNI/roULSewlcWuBhdTJzP4nIrLcsmrOvfTvIuWpWKweY1zrOc/PJXPSM6KDje7GRSx08zyf6Sc8avNnXUHZ5ncxeR3Zz+Og/UUi3MbLvWNbeD8Qxnx6iXgrfeIQwlvqNKID8u57+jrC2Zu5CRztgJ1YxATejHyPDnuBXtmStrKiWwMI5Kyrk/SgWqb320QLnLiIqOjfA/igDDUGtCHP1wnv0fzI963QpYgiYBYNhKJQG/jXl0octpL+svMVNnMKyLlWNMQlS/dS5ipbCCLI91+DBWVtmeUFwHyCCzr5mUR7UOtIPI3GDA3z2cqDJVgX0rYoJwCO1yukOW2N/S0i4fSWxNoJtKCpxLFbzEe7RQWxEtO/fltOTE4krF/3dIEJNJKfoElzinjQMqOHmOUkBbOsI5ABL7bjsjWsKTjD3BZB8UqaIgc=
+  app: penalty-catalog
