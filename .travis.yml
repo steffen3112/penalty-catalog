@@ -7,6 +7,7 @@ branches:
   - development
 before_script:
 - npm install -g ionic cordova
+- npm install -g @angular/cli
 script:
 - cd client/
 - npm run lint
