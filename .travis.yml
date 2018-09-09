@@ -1,3 +1,11 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 language: node_js
 node_js:
 - "10.9.0"
@@ -24,6 +32,7 @@ script:
   - npm run lint
   - npm run test
   - npm run e2e
+
 deploy:
   provider: heroku
   api_key:
