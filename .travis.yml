@@ -8,14 +8,16 @@ branches:
 
 before_install: 
   - npm install npm@latest -g
-  - cd client/
 
 install:
   - npm install -g ionic cordova
   - npm install -g @angular/cli
 
-script:
+before_script:
   - cd client/
+  - npm install
+
+script:
   - npm run lint
   - npm run test
   - npm run e2e
