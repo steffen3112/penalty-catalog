@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'settings', 
     loadChildren: './pages/settings/settings.module#SettingsPageModule' 
-  }
+  },  { path: 'penalties', loadChildren: './penalties/penalties.module#PenaltiesPageModule' }
+
 ];
 
 @NgModule({
