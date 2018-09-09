@@ -16,9 +16,13 @@ const routes: Routes = [
     loadChildren: './pages/list/list.module#ListPageModule'
   },
   {
-    path: 'settings', 
-    loadChildren: './pages/settings/settings.module#SettingsPageModule' 
-  },  { path: 'penalties', loadChildren: './penalties/penalties.module#PenaltiesPageModule' }
+    path: 'settings',
+    loadChildren: './pages/settings/settings.module#SettingsPageModule'
+  },
+  { 
+    path: 'penalties', 
+    loadChildren: './pages/penalties/penalties.module#PenaltiesPageModule' 
+  }
 
 ];
 
@@ -26,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
