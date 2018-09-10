@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/steffen3112/penalty-catalog.svg?branch=master)](https://travis-ci.org/steffen3112/penalty-catalog)
 
 # penalty-catalog
-The source code for the penalty catalog application is managed in this repository.  This is a hybrid app based on the Ionic Framework.  The application is developed by Marco Achammer (maggo@gmail.com) and Steffen Schwarz (schwarzs395@gmail.com).
+The source code for the penalty catalog application is managed in this repository.  This is a hybrid app based on the Ionic Framework.  The application is developed by BBB & SS.
 
 ## Quick Start
 
