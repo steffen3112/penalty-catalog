@@ -35,11 +35,12 @@ script:
   - npm run build
   
 before_deploy:
-  - echo pwd
+  - pwd
   - cd ..
-  - echo pwd
+  - pwd
   
 deploy:
+  skip_cleanup: true
   provider: heroku
   api_key:
     master: 
