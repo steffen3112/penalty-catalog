@@ -1,0 +1,16 @@
+{
+    "name": "client",
+    "version": "0.0.1",
+    "author": "Ionic Framework",
+    "homepage": "http://ionicframework.com/",
+    "scripts": {
+        "postinstall": "cd client/ && npm run build && npm run start"
+    },
+    "private": true,
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "description": "An Ionic project"
+  }
+  
