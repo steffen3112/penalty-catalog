@@ -15,6 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular/cli": "~6.1.1",
+    "@angular/compiler-cli": "~6.1.1",
     "@angular/common": "~6.1.1",
     "@angular/core": "~6.1.1",
     "@angular/forms": "~6.1.1",
@@ -31,11 +32,11 @@
     "express": "^4.16.3",
     "rxjs": "6.2.2",
     "serve-static": "^1.13.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "typescript": "~2.9.2"
   },
   "devDependencies": {
     "@angular/compiler": "~6.1.1",
-    "@angular/compiler-cli": "~6.1.1",
     "@angular/language-service": "~6.1.1",
     "@angular-devkit/architect": "~0.7.2",
     "@angular-devkit/build-angular": "~0.7.2",
@@ -56,8 +57,8 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "tslint": "~5.11.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "engine": { "node": "10.9.0", "npm": "6.2.0" }
 }
