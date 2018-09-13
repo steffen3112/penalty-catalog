@@ -32,7 +32,6 @@ script:
   - npm run lint
   - npm run test
   - npm run e2e
-  - npm run build
   
 before_deploy:
   - pwd
@@ -44,9 +43,9 @@ deploy:
   provider: heroku
   api_key:
     master: 
-      secure: aPpJeWPQBqTPtB+kc8MkPcBbVqvga4wnNuKI0xLngJV0sPyu14l9J2ybofae4IfV9JkjKieoBVuRLO2s1MQuZ/EljP/3mKcPgIY8J4c5/IBq/FVKTt7HxDZPDCxTOeeg5UpfBpDSFwWtzfVyNhQWcQFVX5hYl/9Ws1EUC8GveixEirQogcoUJRPAvh1d3vjzs00ElVY1cy5wIgm++9JHWV5U1UhHIadgkuO30ntCs67Pzau0AT5OcvnLrNI/roULSewlcWuBhdTJzP4nIrLcsmrOvfTvIuWpWKweY1zrOc/PJXPSM6KDje7GRSx08zyf6Sc8avNnXUHZ5ncxeR3Zz+Og/UUi3MbLvWNbeD8Qxnx6iXgrfeIQwlvqNKID8u57+jrC2Zu5CRztgJ1YxATejHyPDnuBXtmStrKiWwMI5Kyrk/SgWqb320QLnLiIqOjfA/igDDUGtCHP1wnv0fzI963QpYgiYBYNhKJQG/jXl0octpL+svMVNnMKyLlWNMQlS/dS5ipbCCLI91+DBWVtmeUFwHyCCzr5mUR7UOtIPI3GDA3z2cqDJVgX0rYoJwCO1yukOW2N/S0i4fSWxNoJtKCpxLFbzEe7RQWxEtO/fltOTE4krF/3dIEJNJKfoElzinjQMqOHmOUkBbOsI5ABL7bjsjWsKTjD3BZB8UqaIgc=
-    development:  183f611b-62a8-4ea8-a814-a4a35e1f5cd6
-          
+      secure: mtcLa73iuwwMxWddtmDec3aNhwsqlr3a83NjqFBLBuadRSdGpnnDw2bjzCspP5Rk8FT0T8ONW6o/puJeviLBMjYMeuESNWK5yML7w9EHIM7d2piqhUI/kNb338pPH/hTfVc3CGLIBcP+nTbIjpWl+Ton8dk5Qt4GugPsPwFJnVFy9BaFYW/Roxx4mUV7WBkS0H1HCEjmlWCCueKtMMQktRjgA7vgfxXYaGGIQl39pZjGWgb5/ludMsu/rCM85nXShCp3tBhcPhtHTy6CKPn4OrvI48HuxiiR9CE5reUeXOp3e01zIAlA0oFqJO6ITOdamxE6iQhjtEVDD1RGf15bLUdI0dp/Tuaymfvz6W7WZdzsTa4ONRwOICuplqeBKiBmTWD9D4eLkhW2c8FrUSmySGtgeyveNzf6M0YX4WD8HSMYxUFMyX5zJqRcO7iqt/qf3UnS+72fDOVdZwDTVTlQuNdTj/NDFXbrwtPgAVKBClMZk2gaD1jMYKFkkjw/FRQbkr2JxG7qu/K8BhPKuIH8m8LJp36+ZOC+8kmoRSxSO6OOkfpN+9g4+yc33Xq1xjwOkd/yVZgjBmWXJtPkM0eou1O1qAcWSWLwnO6GFEhfEnpyzxPtfnawmhf9HGdM/zV+CDd34FJypq2Ggs/QERiBmpFgsouCQZRbAf3OMoq0z7g=
+    development:  
+      secure: mtcLa73iuwwMxWddtmDec3aNhwsqlr3a83NjqFBLBuadRSdGpnnDw2bjzCspP5Rk8FT0T8ONW6o/puJeviLBMjYMeuESNWK5yML7w9EHIM7d2piqhUI/kNb338pPH/hTfVc3CGLIBcP+nTbIjpWl+Ton8dk5Qt4GugPsPwFJnVFy9BaFYW/Roxx4mUV7WBkS0H1HCEjmlWCCueKtMMQktRjgA7vgfxXYaGGIQl39pZjGWgb5/ludMsu/rCM85nXShCp3tBhcPhtHTy6CKPn4OrvI48HuxiiR9CE5reUeXOp3e01zIAlA0oFqJO6ITOdamxE6iQhjtEVDD1RGf15bLUdI0dp/Tuaymfvz6W7WZdzsTa4ONRwOICuplqeBKiBmTWD9D4eLkhW2c8FrUSmySGtgeyveNzf6M0YX4WD8HSMYxUFMyX5zJqRcO7iqt/qf3UnS+72fDOVdZwDTVTlQuNdTj/NDFXbrwtPgAVKBClMZk2gaD1jMYKFkkjw/FRQbkr2JxG7qu/K8BhPKuIH8m8LJp36+ZOC+8kmoRSxSO6OOkfpN+9g4+yc33Xq1xjwOkd/yVZgjBmWXJtPkM0eou1O1qAcWSWLwnO6GFEhfEnpyzxPtfnawmhf9HGdM/zV+CDd34FJypq2Ggs/QERiBmpFgsouCQZRbAf3OMoq0z7g=  
   app: 
     master: penalty-catalog
     development: penalty-catalog-dev
