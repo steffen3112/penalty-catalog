@@ -60,5 +60,5 @@
     "tslint": "~5.11.0"
   },
   "description": "An Ionic project",
-  "engine": { "node": "10.9.0", "npm": "6.2.0" }
+  "engines": { "node": "10.9.0", "npm": "6.2.0" }
 }

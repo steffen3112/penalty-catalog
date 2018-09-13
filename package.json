@@ -4,13 +4,14 @@
     "author": "Ionic Framework",
     "homepage": "http://ionicframework.com/",
     "scripts": {
-        "postinstall": "cd client/ && npm run build && npm run start"
+        "postinstall": "ls && cd client/ && npm run build && npm run start"
     },
     "private": true,
     "dependencies": {
     },
     "devDependencies": {
     },
-    "description": "An Ionic project"
+    "description": "An Ionic project",
+    "engines": { "node": "10.9.0", "npm": "6.2.0" }
   }
   
