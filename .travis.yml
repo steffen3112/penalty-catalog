@@ -3,49 +3,40 @@ dist: trusty
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
 language: node_js
 node_js:
-- "10.9.0"
+- 10.9.0
 branches:
   only:
   - master
   - development
-
-before_install: 
-  - npm install npm@latest -g
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+before_install:
+- npm install npm@latest -g
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
-  - npm install -g ionic cordova
-  - npm install -g @angular/cli
-
+- npm install -g ionic cordova
+- npm install -g @angular/cli
 before_script:
-  - cd client/
-  - npm install
-
+- cd client/
+- npm install
 script:
-  - npm run lint
-  - npm run test
-  - npm run e2e
-  
+- npm run lint
+- npm run test
+- npm run e2e
 before_deploy:
-  - pwd
-  - cd ..
-  - pwd
-  
+- pwd
+- cd ..
+- pwd
 deploy:
   skip_cleanup: true
   provider: heroku
   api_key:
-    master: 
-      secure: mtcLa73iuwwMxWddtmDec3aNhwsqlr3a83NjqFBLBuadRSdGpnnDw2bjzCspP5Rk8FT0T8ONW6o/puJeviLBMjYMeuESNWK5yML7w9EHIM7d2piqhUI/kNb338pPH/hTfVc3CGLIBcP+nTbIjpWl+Ton8dk5Qt4GugPsPwFJnVFy9BaFYW/Roxx4mUV7WBkS0H1HCEjmlWCCueKtMMQktRjgA7vgfxXYaGGIQl39pZjGWgb5/ludMsu/rCM85nXShCp3tBhcPhtHTy6CKPn4OrvI48HuxiiR9CE5reUeXOp3e01zIAlA0oFqJO6ITOdamxE6iQhjtEVDD1RGf15bLUdI0dp/Tuaymfvz6W7WZdzsTa4ONRwOICuplqeBKiBmTWD9D4eLkhW2c8FrUSmySGtgeyveNzf6M0YX4WD8HSMYxUFMyX5zJqRcO7iqt/qf3UnS+72fDOVdZwDTVTlQuNdTj/NDFXbrwtPgAVKBClMZk2gaD1jMYKFkkjw/FRQbkr2JxG7qu/K8BhPKuIH8m8LJp36+ZOC+8kmoRSxSO6OOkfpN+9g4+yc33Xq1xjwOkd/yVZgjBmWXJtPkM0eou1O1qAcWSWLwnO6GFEhfEnpyzxPtfnawmhf9HGdM/zV+CDd34FJypq2Ggs/QERiBmpFgsouCQZRbAf3OMoq0z7g=
-    development:  
-      secure: mtcLa73iuwwMxWddtmDec3aNhwsqlr3a83NjqFBLBuadRSdGpnnDw2bjzCspP5Rk8FT0T8ONW6o/puJeviLBMjYMeuESNWK5yML7w9EHIM7d2piqhUI/kNb338pPH/hTfVc3CGLIBcP+nTbIjpWl+Ton8dk5Qt4GugPsPwFJnVFy9BaFYW/Roxx4mUV7WBkS0H1HCEjmlWCCueKtMMQktRjgA7vgfxXYaGGIQl39pZjGWgb5/ludMsu/rCM85nXShCp3tBhcPhtHTy6CKPn4OrvI48HuxiiR9CE5reUeXOp3e01zIAlA0oFqJO6ITOdamxE6iQhjtEVDD1RGf15bLUdI0dp/Tuaymfvz6W7WZdzsTa4ONRwOICuplqeBKiBmTWD9D4eLkhW2c8FrUSmySGtgeyveNzf6M0YX4WD8HSMYxUFMyX5zJqRcO7iqt/qf3UnS+72fDOVdZwDTVTlQuNdTj/NDFXbrwtPgAVKBClMZk2gaD1jMYKFkkjw/FRQbkr2JxG7qu/K8BhPKuIH8m8LJp36+ZOC+8kmoRSxSO6OOkfpN+9g4+yc33Xq1xjwOkd/yVZgjBmWXJtPkM0eou1O1qAcWSWLwnO6GFEhfEnpyzxPtfnawmhf9HGdM/zV+CDd34FJypq2Ggs/QERiBmpFgsouCQZRbAf3OMoq0z7g=  
-  app: 
+    secure: OGZOdeTYL8ZFwgD7NFoMpv6w8kMgzgE4B2195irovR1D2OP+qDUbRGsAwcOIU8IGAJi3l+GbV/VqBBWRe4Y7Z+bQKb9lY6yumhOMRVrJXipXTCd9yeJqZuTyH63Um/ZU8Mi41ybCxbnJuEBky7SlYK8joOqHnCSo0lWu3ymBzMRkl1Ncvi3pRJLIrxqkOB73lxXFwlDdHAYaOzr/NOLfEb/RAik4iQ+KZYYbrKeEq4xbEIv2asMn026E2A5CjzXBO7xwGeHKp5mXvkp90zQl7tHrbfUJs2QbnTk1BCK4pSDWblFe5y/nehgcBV+qBuKCPsXD0PJZH3iO89bA9sRwB7lOx2Ml2DwTBLMY8R98Rv/1Xzan2pcQlT3yvR3DLCzGJT8Wvfm96bnNl/g7oJvpooNz/xhi+DPUoKuGdGYC8ZIF+c7KoG+mZHOaBD3jvnWTDy0A2xIo6+Tj+jr8ltPR9/z093gti0fof36p67YfuMf9DSARI7cu0xzB8gdAdZvL6m4sMPj5uCNq9QNjdN1tVAye2FLxtULiI4Sp+jyTP/L/H3nyTUtTk0d4Sx80BEclLbmVbFzvB3/JLiAEzKs2yxAhtbot+p8+Pr21b1em1F6DL5hzbURp32UE1fbppqJw1rg8bIgCMVNT2PI9aRopz5b8Xmv3PZ9VMcTDgDVAhBQ=
+  app:
     master: penalty-catalog
     development: penalty-catalog-dev
