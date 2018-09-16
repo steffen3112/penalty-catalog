@@ -4,7 +4,8 @@
     "author": "Ionic Framework",
     "homepage": "http://ionicframework.com/",
     "scripts": {
-        "start": "ls && cd client/ && npm install && npm run build && npm run start"
+        "build": "cd client && npm install && npm run build && cd ..",
+        "postinstall": "npm run build && echo 'Client built!'"
     },
     "private": true,
     "dependencies": {
