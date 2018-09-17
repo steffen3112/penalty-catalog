@@ -1,1 +1,1 @@
-web: sh -c 'ls && cd client/ && npm run build && ls && npm start'
+web: sh -c 'cd client/  && npm start'
