@@ -1,4 +1,3 @@
-(Build Status Dev-Enviroment)
 [![Build Status](https://travis-ci.org/steffen3112/penalty-catalog.svg?branch=development)](https://travis-ci.org/steffen3112/penalty-catalog)
 
 # penalty-catalog
