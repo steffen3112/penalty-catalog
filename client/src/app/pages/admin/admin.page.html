@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>{{developerName}}</h2>
+  <div *ngIf="todos?.length > 0">
+    <ul *ngFor="let todo of todos">
+      <li>{{todo.id}}</li>
+      <li>{{todo.userId}}</li>
+      <li>{{todo.title}}</li>
+      <li>{{todo.completed}}</li>
+      <input [(ngModel)]="todo.title" placeholder="title">
+    </ul>
+  </div>
+  <h3>Edit Todo</h3>
+</ion-content>

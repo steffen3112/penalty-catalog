@@ -29,6 +29,11 @@ export class AppComponent {
       title: 'Penalties',
       url: '/penalties',
       icon: 'home'
+    },
+    {
+      title: 'Admin',
+      url: '/admin',
+      icon: 'logo-freebsd-devil'
     }
   ];
 
