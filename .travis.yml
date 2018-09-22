@@ -1,0 +1,42 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+language: node_js
+node_js:
+- 10.9.0
+branches:
+  only:
+  - master
+  - development
+before_install:
+- npm install npm@latest -g
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+install:
+- npm install -g ionic cordova
+- npm install -g @angular/cli
+before_script:
+- cd client/
+- npm install
+script:
+- npm run lint
+- npm run test
+- npm run e2e
+before_deploy:
+- pwd
+- cd ..
+- pwd
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: "bMGtPzO0ZPvONocmrnw2WOoX7SvQ9QcwmxaEtT8G50tXJaiJIOdBIFEaZU9eiJo98q/HOqEAuqoJl7DGDXfG0t5ydmgyozg8WhrIrgJqOV6kE0CPV/BT38OxAnXKlBjB4aymiaQC708ZSjqFi0d6JKsAFQ1ECD9DTLl+EQHHRTsIF+OeYfyC4W0ChnoiahkeG5dQjvfSo6CQvHwKJSDc9p1RjTvQx4xRuE9WNslFXHrXRi0omHT0HwFMwL4PHysnxqg+NMT30HB3POY6+73tEgwYaU8BCx9WNOONjQQPbR/YFZzOp5iGldxBWUX3bklWnFQ/DH8wDXPuaD2HnSXoEjR2Y5sE3ChzaUu7N9xUPc9KhMA9hTpZ1IiYRy38e/NGtIXreWCwzNvgU+cjEiI7IIbIedjqFdFuLofjNqUAyl+ewNomRzaRHzwB8DzXbWlWOR4PvMNi89XwGMrk5I/OSCvS7TbT3/8nk+H5aR73prP+GGiiZKt8eHp6TLYhRhP4IIMfWDIPr49uaNDZPJcrmbs03nbq1Z+1Yi2vPwuKy9xDq1ks0TTWO5lCdBp4KODudHHYceVVIu22r8jdYDNM36m4XuwmHmshgI7Pai9GydfNIUZyigsB7qKfWbrzleEiHgi4qg6lXfnDYRiFSTRrNPLdepOXHG9py7qVGUuznDU="
+  app:
+    master: penalty-catalog
+    development: penalty-catalog-dev

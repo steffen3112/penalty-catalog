@@ -19,10 +19,11 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: './pages/settings/settings.module#SettingsPageModule'
   },
-  { 
-    path: 'penalties', 
-    loadChildren: './pages/penalties/penalties.module#PenaltiesPageModule' 
-  }
+  {
+    path: 'penalties',
+    loadChildren: './pages/penalties/penalties.module#PenaltiesPageModule'
+  },
+  { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' }
 
 ];
 

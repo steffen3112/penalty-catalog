@@ -1,0 +1,20 @@
+{
+    "name": "Penalty-Catalog",
+    "description": "App to punish misdemeanors. Especially with regard to team sports.",
+    "buildpacks": [
+        {
+            "url": "https://github.com/negativetwelve/heroku-buildpack-subdir"
+        }
+    ],
+    "env": {
+        "NPM_CONFIG_PRODUCTION": {
+            "value": "false"
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
