@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminServiceService } from '../../services/admin/admin-service.service';
-import { Todo } from '../../models/todos';
+import { User } from '../../models/User';
+import { UserService } from '../../services/users/user.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,19 +9,40 @@ import { Todo } from '../../models/todos';
 })
 export class AdminPage implements OnInit {
 
-  constructor(private adminService: AdminServiceService) { }
+  //~ Instance fields
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  users: User[] = [];
+
+  //~ Constructors
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  constructor(private userService: UserService) { }
+
+
+  //~ Lifecycle Hooks
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ngOnInit() {
-    this.getTodos();
+    this.getUsers();
   }
 
-  developerName = "Berger";
-  todos: Todo[] = [];
 
-  getTodos(): void {
-    this.todos = this.adminService.getTodos();
-    console.log(this.todos);
+  //~ Methods
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  /** Here in the component happens the data binding to the html template
+   *  We just put here the requests to the services and handle the
+   *  users interaction
+   */
+  getUsers(): void {
+    this.userService.getUsers()
+      .subscribe( users => this.users = users);
   }
 
+  /** simple click handler. see the admin.page.html in <ion-list>-Tag */
+  onSelectUser(user: User): void {
+    console.log(user)
+  }
 
 }

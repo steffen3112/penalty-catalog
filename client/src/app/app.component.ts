@@ -33,7 +33,7 @@ export class AppComponent {
     {
       title: 'Admin',
       url: '/admin',
-      icon: 'logo-freebsd-devil'
+      icon: 'ios-people'
     }
   ];
 
