@@ -26,7 +26,7 @@ export class User {
       name: string;
       catchPhrase: string;
       bs: string
-    }
+    };
 
 
     //~ Methods
@@ -36,6 +36,5 @@ export class User {
     isValidUser(user: User): boolean {
         return user.name.length >= 4 ? true : false;
     }
-
-
+    
 }

@@ -19,14 +19,12 @@ export class AdminPage implements OnInit {
 
   constructor(private userService: UserService) { }
 
-
   //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ngOnInit() {
     this.getUsers();
   }
-
 
   //~ Methods
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,7 +40,7 @@ export class AdminPage implements OnInit {
 
   /** simple click handler. see the admin.page.html in <ion-list>-Tag */
   onSelectUser(user: User): void {
-    console.log(user)
+    console.log(user);
   }
 
 }
