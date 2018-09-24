@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+      <button ion-button icon-only (click)="modalCtrl.dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    <ion-title>usercontent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&oh=7c376a1d2a48b490c25f842966b160ae&oe=5C2F0CE9">
+        </ion-avatar>
+        <h2>{{user.name}}</h2>
+        <p>{{user.phone}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-note item-end>
+          {{user.company.bs}}
+        </ion-note>
+      </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-input required type="text" placeholder="First Name"></ion-input>
+  </ion-item>
+</ion-content>
