@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../models/User';
+import { Penalty } from '../../models/Penalty';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators'
@@ -11,13 +11,13 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class PenaltyService {
 
   //~ Instance fields
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  private userUrl = 'https://jsonplaceholder.typicode.com/users'
+  private penaltyUrl = 'https://jsonplaceholder.typicode.com/posts'
 
-  users: User[] = [];
+  penalties: Penalty[] = [];
   
   //~ Constructors
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,16 +27,16 @@ export class UserService {
   //~ Methods
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-  /** GET users from fake api */
-  getUsers(): Observable<User[]> {
+  /** GET todos from fake api */
+  getPenalties(): Observable<Penalty[]> {
 
-    return this.http.get<User[]>(this.userUrl)
+    return this.http.get<Penalty[]>(this.penaltyUrl)
       .pipe(
-        tap( users => console.log("Fetched Users", users)),
-        catchError(this.handleError<User[]>("getUsers", []))
+        tap( penalties => console.log("Fetched Penalty", penalties)),
+        catchError(this.handleError<Penalty[]>("getUsers", []))
       );
   }
-
+  
   /**
    * Handle Http operation that failed.
    * Let the app continue.
