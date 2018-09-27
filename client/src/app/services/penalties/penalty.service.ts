@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Penalty } from '../../models/Penalty';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators'
+import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,7 +15,7 @@ export class PenaltyService {
 
   //~ Instance fields
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  private penaltyUrl = 'https://jsonplaceholder.typicode.com/posts'
+  private penaltyUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   penalties: Penalty[] = [];
   
@@ -32,8 +32,8 @@ export class PenaltyService {
 
     return this.http.get<Penalty[]>(this.penaltyUrl)
       .pipe(
-        tap( penalties => console.log("Fetched Penalty", penalties)),
-        catchError(this.handleError<Penalty[]>("getUsers", []))
+        tap( penalties => console.log('Fetched Penalty', penalties)),
+        catchError(this.handleError<Penalty[]>('getUsers', []))
       );
   }
   

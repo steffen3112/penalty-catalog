@@ -1,6 +1,6 @@
 import { User } from './../../models/User';
 import { Component, OnInit, Input } from '@angular/core';
-import { NavController,ModalController, NavParams} from '@ionic/angular';
+import { NavController, ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-usercontent',
@@ -11,7 +11,7 @@ export class UsercontentPage implements OnInit {
 
   @Input() user: User;
 
-  constructor(private nav: NavController, public modalCtrl: ModalController, private params: NavParams) { 
+  constructor(private nav: NavController, public modalCtrl: ModalController, private params: NavParams) {
   }
 
   ngOnInit() {

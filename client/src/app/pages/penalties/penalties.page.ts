@@ -20,7 +20,7 @@ export class PenaltiesPage implements OnInit {
   //~ Constructors
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  constructor(private PenaltyService: PenaltyService, public modalCtrl: ModalController) { }
+  constructor(private penaltyService: PenaltyService, public modalCtrl: ModalController) { }
 
     //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,7 +35,7 @@ export class PenaltiesPage implements OnInit {
    *  penalty interaction
    */
   getPenalties(): void {
-    this.PenaltyService.getPenalties()
+    this.penaltyService.getPenalties()
       .subscribe( penalties => this.penalties = penalties);
   }
 
@@ -47,7 +47,7 @@ export class PenaltiesPage implements OnInit {
       componentProps: {penalty: penalty}
     });
 
-    return await modal.present()
+    return await modal.present();
     
   }
 
