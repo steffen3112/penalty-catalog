@@ -1,6 +1,9 @@
+import { UsercontentPage } from './../usercontent/usercontent.page';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User';
 import { UserService } from '../../services/users/user.service';
+
+import { ModalController, Platform, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-admin',
@@ -17,7 +20,7 @@ export class AdminPage implements OnInit {
   //~ Constructors
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, public modalCtrl: ModalController) { }
 
   //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,8 +42,15 @@ export class AdminPage implements OnInit {
   }
 
   /** simple click handler. see the admin.page.html in <ion-list>-Tag */
-  onSelectUser(user: User): void {
-    console.log(user);
-  }
+  async onSelectUser(user: User) {
+    
+    const modal = await this.modalCtrl.create({
+      component: UsercontentPage,
+      componentProps: {user: user}
+    });
 
+    return await modal.present()
+    
+  }
+  
 }

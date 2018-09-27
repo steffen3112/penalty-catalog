@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+
+        <button ion-button block (click)="modalCtrl.dismiss()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+
+        <ion-col>
+          <ion-title>User Details</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-row>
+    <ion-avatar item-start>
+      <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&oh=7c376a1d2a48b490c25f842966b160ae&oe=5C2F0CE9">
+    </ion-avatar>
+    <h2>{{user.name}}</h2>
+  </ion-row>
+
+  <ion-row class ="test">
+    <ion-list >
+      <ion-item class ="detail">Username:</ion-item>
+      <ion-item class ="detail">E-Mail:</ion-item>
+      <ion-item class ="detail">Phone:</ion-item>
+      <ion-item class ="detail">Street:</ion-item>
+      <ion-item class ="detail">City:</ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>{{user.username}}</ion-item>
+      <ion-item>{{user.email}}</ion-item>
+      <ion-item>{{user.phone}}</ion-item>
+      <ion-item>{{user.address.street}}, {{user.address.suite}}</ion-item>
+      <ion-item>{{user.address.city}}</ion-item>
+    </ion-list>
+  </ion-row>
+</ion-content>

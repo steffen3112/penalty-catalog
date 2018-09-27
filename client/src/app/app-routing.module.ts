@@ -23,7 +23,9 @@ const routes: Routes = [
     path: 'penalties',
     loadChildren: './pages/penalties/penalties.module#PenaltiesPageModule'
   },
-  { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' }
+  { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
+  { path: 'usercontent', loadChildren: './pages/usercontent/usercontent.module#UsercontentPageModule' },  { path: 'penaltycontent', loadChildren: './pages/penaltycontent/penaltycontent.module#PenaltycontentPageModule' }
+
 
 ];
 
