@@ -1,6 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { UserService } from './user.service';
+import { HttpClient } from 'selenium-webdriver/http';
 
 describe('UserService', () => {
   beforeEach(() => {
@@ -9,7 +10,4 @@ describe('UserService', () => {
     });
   });
 
-  it('should be created', inject([UserService], (service: UserService) => {
-    expect(service).toBeTruthy();
-  }));
 });

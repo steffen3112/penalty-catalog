@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators'
+import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,7 +15,8 @@ export class UserService {
 
   //~ Instance fields
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  private userUrl = 'https://jsonplaceholder.typicode.com/users'
+  
+  private userUrl = 'https://jsonplaceholder.typicode.com/users';
 
   users: User[] = [];
   
@@ -32,8 +33,8 @@ export class UserService {
 
     return this.http.get<User[]>(this.userUrl)
       .pipe(
-        tap( users => console.log("Fetched Users", users)),
-        catchError(this.handleError<User[]>("getUsers", []))
+        tap( users => console.log('Fetched Users', users)),
+        catchError(this.handleError<User[]>('getUsers', []))
       );
   }
 
@@ -55,9 +56,6 @@ export class UserService {
       return of(result as T);
     };
   }
-
-
-
 
 }
 

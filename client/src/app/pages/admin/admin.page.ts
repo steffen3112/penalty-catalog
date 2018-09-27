@@ -22,14 +22,12 @@ export class AdminPage implements OnInit {
 
   constructor(private userService: UserService, public modalCtrl: ModalController) { }
 
-
   //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ngOnInit() {
     this.getUsers();
   }
-
 
   //~ Methods
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,6 +42,7 @@ export class AdminPage implements OnInit {
   }
 
   /** simple click handler. see the admin.page.html in <ion-list>-Tag */
+<<<<<<< HEAD
   async onSelectUser(user: User) {
     
     const modal = await this.modalCtrl.create({
@@ -53,6 +52,10 @@ export class AdminPage implements OnInit {
 
     return await modal.present()
     
+=======
+  onSelectUser(user: User): void {
+    console.log(user);
+>>>>>>> 80cec0f6af64d274e4da086e599cda836b77ea46
   }
 
 
