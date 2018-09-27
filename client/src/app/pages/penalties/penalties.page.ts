@@ -1,4 +1,4 @@
-import { UsercontentPage } from './../usercontent/usercontent.page';
+import { PenaltycontentPage } from './../penaltycontent/penaltycontent.page';
 import { Component, OnInit } from '@angular/core';
 import { Penalty } from '../../models/Penalty';
 import { PenaltyService } from '../../services/penalties/penalty.service';
@@ -32,7 +32,7 @@ export class PenaltiesPage implements OnInit {
 
   /** Here in the component happens the data binding to the html template
    *  We just put here the requests to the services and handle the
-   *  users interaction
+   *  penalty interaction
    */
   getPenalties(): void {
     this.PenaltyService.getPenalties()
@@ -40,10 +40,10 @@ export class PenaltiesPage implements OnInit {
   }
 
   /** simple click handler. see the admin.page.html in <ion-list>-Tag */
-  async onSelectUser(penalty: Penalty) {
+  async onSelectPenalty(penalty: Penalty) {
     
     const modal = await this.modalCtrl.create({
-      component: UsercontentPage,
+      component: PenaltycontentPage,
       componentProps: {penalty: penalty}
     });
 
