@@ -1,13 +1,29 @@
-# dependencies
-/node_modules
-node_modules
-# testing
-/coverage
+.idea/
+.ionic/
+.sourcemaps/
+.sass-cache/
+.tmp/
+.versions/
+coverage/
+www/
+node_modules/
+tmp/
+temp/
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+$RECYCLE.BIN/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
 
 # production
 /build
 www/
 # misc
+.vscode
 .DS_Store
 .env.local
 .env.development.local
@@ -18,3 +34,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
+
+#gradle
+.gradle/
+
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+.vscode/
+npm-debug.log*

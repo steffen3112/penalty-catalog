@@ -1,6 +1,6 @@
 import { User } from './../../models/User';
 import { Component, OnInit, Input } from '@angular/core';
-import { NavController, ModalController, NavParams } from '@ionic/angular';
+import { NavController, ModalController, NavParams} from '@ionic/angular';
 
 @Component({
   selector: 'app-usercontent',
@@ -8,6 +8,8 @@ import { NavController, ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./usercontent.page.scss'],
 })
 export class UsercontentPage implements OnInit {
+
+  public userPicture = `https://randomuser.me/api/portraits/thumb/men/${Math.round((Math.random() * 100))}.jpg`;
 
   @Input() user: User;
 

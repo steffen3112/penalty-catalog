@@ -1,15 +1,31 @@
-// import { TestBed, inject } from '@angular/core/testing';
+import { HttpClient, HttpBackend } from '@angular/common/http';
+import { TestBed, inject } from '@angular/core/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { PenaltyService } from './penalty.service';
 
-// import { PenaltyService } from './penalty.service';
+describe('PenaltyService', () => {
 
-// describe('UserService', () => {
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [PenaltyService]
-//     });
-//   });
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+  let penaltyService: PenaltyService;
 
-//   it('should be created', inject([PenaltyService], (service: PenaltyService) => {
-//     expect(service).toBeTruthy();
-//   }));
-// });
+  beforeEach(() => {
+  
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [PenaltyService]
+    });
+    
+    httpClient = TestBed.get(HttpClient);
+    httpTestingController = TestBed.get(HttpTestingController);
+    penaltyService = new PenaltyService(httpClient);
+    
+  });
+
+  it('exists', inject([PenaltyService], (service: PenaltyService) => {
+    expect(service).toBeTruthy();
+  }));
+
+  //TODO: Configure further test
+
+});
