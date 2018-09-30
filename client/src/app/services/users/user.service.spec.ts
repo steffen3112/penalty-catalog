@@ -1,13 +1,51 @@
+import { HttpClient, HttpBackend } from '@angular/common/http';
 import { TestBed, inject } from '@angular/core/testing';
-
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
 import { UserService } from './user.service';
-import { HttpClient } from 'selenium-webdriver/http';
+import { User } from '../../models/User';
 
-describe('UserService', () => {
+fdescribe('UserService', () => {
+
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+  let userService: UserService;
+
   beforeEach(() => {
+
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [UserService]
     });
+    
+    httpClient = TestBed.get(HttpClient);
+    httpTestingController = TestBed.get(HttpTestingController);
+    userService = new UserService(httpClient);
+
+
   });
+
+  fit('exists', inject([UserService], (service: UserService) => {
+    expect(service).toBeTruthy();
+  }));
+
+  fdescribe('users', () => {
+
+    fit('gets the users from JSON Placeholder API', () => {
+      userService.getUsers().subscribe( user => {
+        expect(user).toEqual([new User()]);
+      });
+
+      const req = httpTestingController.expectOne('https://jsonplaceholder.typicode.com/users');
+
+      expect(req.request.method).toEqual('GET');
+      req.flush([
+        new User()
+      ]);
+
+      httpTestingController.verify();
+
+    })
+
+  })
 
 });
