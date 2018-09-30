@@ -4,7 +4,7 @@ import { HttpTestingController, HttpClientTestingModule } from '@angular/common/
 import { UserService } from './user.service';
 import { User } from '../../models/User';
 
-fdescribe('UserService', () => {
+describe('UserService', () => {
 
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
@@ -24,13 +24,13 @@ fdescribe('UserService', () => {
 
   });
 
-  fit('exists', inject([UserService], (service: UserService) => {
+  it('exists', inject([UserService], (service: UserService) => {
     expect(service).toBeTruthy();
   }));
 
-  fdescribe('users', () => {
+  describe('users', () => {
 
-    fit('gets the users from JSON Placeholder API', () => {
+    it('gets the users from JSON Placeholder API', () => {
       userService.getUsers().subscribe( user => {
         expect(user).toEqual([new User()]);
       });
