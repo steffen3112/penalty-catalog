@@ -8,7 +8,7 @@ import { ModalController, Platform, NavParams } from '@ionic/angular';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.page.html',
-  styleUrls: ['./admin.page.scss'],
+  styleUrls: ['./admin.page.scss']
 })
 export class AdminPage implements OnInit {
 

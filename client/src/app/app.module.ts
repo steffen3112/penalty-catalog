@@ -20,7 +20,6 @@ import { PenaltycontentPage } from './pages/penaltycontent/penaltycontent.page';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule
-
   ],
   providers: [
     StatusBar,
