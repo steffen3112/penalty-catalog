@@ -8,7 +8,7 @@ export class NamePipe implements PipeTransform {
 
   transform(user: User, args?: any): string {
 
-    let formattedUser = `${user.name}${user.address !== undefined ? ', ' + user.address.city : ''}`
+    const formattedUser = `${user.name}${user.address !== undefined ? ', ' + user.address.city : ''}`;
 
     return formattedUser;
   }

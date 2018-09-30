@@ -1,6 +1,6 @@
 import { HttpClient, HttpBackend } from '@angular/common/http';
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { UserService } from './user.service';
 import { User } from '../../models/User';
 
@@ -44,8 +44,8 @@ describe('UserService', () => {
 
       httpTestingController.verify();
 
-    })
+    });
 
-  })
+  });
 
 });

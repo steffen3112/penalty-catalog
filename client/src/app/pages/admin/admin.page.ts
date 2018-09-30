@@ -49,7 +49,7 @@ export class AdminPage implements OnInit {
       componentProps: {user: user}
     });
 
-    return await modal.present()
+    return await modal.present();
     
   }
   

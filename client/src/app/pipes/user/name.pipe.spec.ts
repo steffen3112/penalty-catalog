@@ -1,7 +1,7 @@
 import { NamePipe } from './name.pipe';
 import { User } from '../../models/User';
 
-fdescribe('NamePipe', () => {
+describe('NamePipe', () => {
 
   let pipe: NamePipe;
   let testUser: User;
@@ -11,27 +11,26 @@ fdescribe('NamePipe', () => {
     testUser = new User();
     testUser.name = 'Steffen';
     testUser.address = {
-      street: "foo",
-      suite: "foo",
+      street: 'foo',
+      suite: 'foo',
       city: 'Regensburg',
-      zipcode: "foo",
+      zipcode: 'foo',
       geo: {
-          lat: "foo",
-          lng: "foo",
+          lat: 'foo',
+          lng: 'foo',
       }
     };
   });
 
-  fit('exists', () => {
-    const pipe = new NamePipe();
+  it('exists', () => {
     expect(pipe).toBeTruthy();
   });
 
-  fit('formats a User properly', () => {
+  it('formats a User properly', () => {
     expect(pipe.transform(testUser)).toEqual('Steffen, Regensburg');
   });
 
-  fit('handels empty address object', () => {
+  it('handels empty address object', () => {
     delete testUser.address;
     expect(pipe.transform(testUser)).toEqual('Steffen');
   });
