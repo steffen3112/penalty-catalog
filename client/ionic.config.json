@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "penalty-catalog",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
