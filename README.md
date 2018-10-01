@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/steffen3112/penalty-catalog.svg?branch=development)](https://travis-ci.org/steffen3112/penalty-catalog)
 
-# penalty-catalog
+# penalty-catalog <img src="https://user-images.githubusercontent.com/29003094/46313219-96904080-c5c7-11e8-9be2-c4bc30d1da7a.png" width="64" height="64" /> 
 The source code for the penalty catalog application is managed in this repository.  This is a hybrid app based on the Ionic Framework.  The application is developed by BBB & SS.
 
 - Links:
