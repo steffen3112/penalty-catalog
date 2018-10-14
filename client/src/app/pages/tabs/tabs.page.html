@@ -1,0 +1,14 @@
+<ion-tabs>
+  <ion-tab label="Dashboard" icon="information-circle" href="/tabs/(dashboard:dashboard)">
+    <ion-router-outlet stack name="dashboard"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Strafenkatalog" icon="create" href="/tabs/(catalog:catalog)">
+    <ion-router-outlet stack name="catalog"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Meine Vergehen" icon="alert" href="/tabs/(penalties:penalties)">
+    <ion-router-outlet stack name="penalties"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Meine Mannschaft" icon="people" href="/tabs/(myteam:myteam)">
+    <ion-router-outlet stack name="myteam"></ion-router-outlet>
+  </ion-tab>
+</ion-tabs>
