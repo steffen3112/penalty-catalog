@@ -21,6 +21,7 @@
 
   <!--******************** Dashboard Tiles ********************** -->
 
+  <h4>Meine Vergehen - Übersicht</h4>
   <ion-grid>
     <ion-row>
       <ion-col id="first-col">
@@ -31,7 +32,7 @@
               viewBox="0 0 500 500">
           <g id="dashboard-circle">
             <circle style="fill:red;stroke:#010101;stroke-width:1.6871;stroke-miterlimit:10;" cx="250" cy="250" r="30%" /> 
-            <text x="50%" y="50%" style="fill:#fff" text-anchor="middle" stroke="#51c5cf" stroke-width="2px" dy=".375em" font-size="15rem">5</text>
+            <text x="50%" y="50%" style="fill:#fff" text-anchor="middle" stroke="#51c5cf" stroke-width="2px" dy=".375em" font-size="15rem">{{userPenalties.length}}</text>
           </g>
         </svg>
         <p class="footer">Offene Strafen</p>   
@@ -39,7 +40,7 @@
 
       <ion-col id="second-col">
         	<div class="container">
-            <h1>-53,00€</h1>
+            <h1>{{usersDebtsSum}} €</h1>
           </div>
           <p class="footer">Schuldenbetrag</p>   
       </ion-col>
@@ -53,30 +54,15 @@
     </ion-row>
   </ion-grid>
 
-  <!--******************** Messenger ********************** -->
-
+  <!--******************** Messages ********************** -->
+  <h4>Messages</h4>
   <ion-list id="messenger">
-      <ion-item>
+      <ion-item *ngFor="let message of messages">
         <ion-label>
-          <h5>Trainer, 19.00Uhr: "Spiel beginnt gleich"</h5>
+          <h5>{{message.date}}, {{message.author}}: {{message.content}}</h5>
         </ion-label>
       </ion-item>
-      <ion-item>
-        <ion-label>
-          <h5>Trainer, 19.00Uhr: "Spiel beginnt gleich"</h5>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h5>Trainer, 19.00Uhr: "Spiel beginnt gleich"</h5>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h5>Trainer, 19.00Uhr: "Spiel beginnt gleich"</h5>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+  </ion-list>
 
 
   <!--******************** Fab ********************** -->

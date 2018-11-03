@@ -4,7 +4,7 @@ import { User } from './User';
 /** 
  * 
  */
-export class TeamPenalty {
+export class AssignedPenalty {
     
     //~ Instance fields
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

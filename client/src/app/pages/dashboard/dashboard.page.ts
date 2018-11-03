@@ -1,4 +1,6 @@
-import { TeamPenalty } from './../../models/TeamPenalty';
+import { MessengerService } from '../../services/messenger/messenger.service';
+import { Message } from './../../models/Message';
+import { AssignedPenalty } from '../../models/AssignedPenalty';
 import { Component, OnInit } from '@angular/core';
 import { PenaltyService } from '../../services/penalties/penalty.service';
 
@@ -12,18 +14,24 @@ export class DashboardPage implements OnInit {
   //~ Instance fields
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  teamPenalties: TeamPenalty[] = [];
+  userPenalties: AssignedPenalty[] = [];
+  usersDebtsSum: number;
+  teamPenalties: AssignedPenalty[] = [];
+  messages: Message[] = [];
 
   //~ Constructors
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  constructor(private penaltyService: PenaltyService) { }
+  constructor(private penaltyService: PenaltyService, private messengerService: MessengerService) { }
 
   //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ngOnInit() {
     this.getLatestTeamPenalties();
+    this.getUsersDebts();
+    this.getUserSpecificPenalties();
+    this.getLatestMessages();
   }
 
   //~ Methods
@@ -40,14 +48,23 @@ export class DashboardPage implements OnInit {
    * fetches the user specific penalties
    */
   getUserSpecificPenalties(): void {
+    this.penaltyService.getUserPenalties()
+      .filter( userPenalty => userPenalty.penalty.payed )
+      .forEach( userPenalty => this.userPenalties.push(userPenalty) );
+  }
 
+  /**
+   * 
+   */
+  getUsersDebts(): void {
+    this.usersDebtsSum = this.penaltyService.getUsersDebts();
   }
 
   /**
    * fetches the latest messages posted in the team chat
    */
   getLatestMessages(): void {
-
+    this.messengerService.getLatestMessages().forEach( message => this.messages.push(message));
   }
 
   /**

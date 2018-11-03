@@ -10,6 +10,7 @@ export class Penalty {
     name: string;
     cost: number;
     date: string;
+    payed: boolean;
    
 
 
