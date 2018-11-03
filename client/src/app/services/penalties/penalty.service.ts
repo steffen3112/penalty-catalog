@@ -1,8 +1,12 @@
+import { AssignedPenalty } from '../../models/AssignedPenalty';
 import { Injectable } from '@angular/core';
 import { Penalty } from '../../models/Penalty';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+
+// FAKE DATA!!!!
+import { teamPenalties, userPenalty } from '../fakeDashboardData.js';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -56,6 +60,28 @@ export class PenaltyService {
     };
   }
 
+  /**
+   * FAKE Service, uses faked Data
+   */
+  getTeamPenalties(): AssignedPenalty[] {
+    return teamPenalties;
+  }
+
+  /**
+   * Fake Service, will return user specific penalties
+   */
+  getUserPenalties(): AssignedPenalty[] {
+    return userPenalty;
+  }
+
+  /**
+   * Calculates the users debts from the fake data array
+   */
+  getUsersDebts(): number {
+    const calculatedSum = userPenalty.map( penalty => parseFloat(penalty.penalty.cost.substring(0, penalty.penalty.cost.length - 1)) )
+                                    .reduce( ( a, b ) => a + b );
+    return calculatedSum;
+  }
 
 
 

@@ -1,0 +1,61 @@
+ion-list {
+    border: 1px solid gray;
+    height: 25%;
+    overflow: auto;
+}
+
+ion-item {
+    border-bottom: 1px solid gray;
+}
+
+ion-grid {
+    border: 1px solid gray;
+}
+
+ion-col p {
+    font-size: 12px;
+    text-align: center;
+}
+
+ion-col h1 {
+    color: red;
+}
+
+#messenger {
+    margin-top: 5%;
+}
+
+.container {
+    height: 90%; 
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    bottom: 0;
+    text-align: center;
+}
+
+.container p {
+    display: block;
+    margin-bottom: 2px;
+}
+
+#first-col {
+    margin-right: 1px;
+}
+
+#second-col {
+    margin-right: 1px;
+    margin-left: 1px;
+}
+
+#third-col {
+    margin-left: 1px;
+}
+

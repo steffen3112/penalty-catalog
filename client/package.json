@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "postinstall": "ng build",
+    "pre-build": "npm run lint && npm run test && npm run e2e"
   },
   "private": true,
   "dependencies": {
