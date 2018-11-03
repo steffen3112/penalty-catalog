@@ -11,7 +11,7 @@
   <!--******************** List Mock UP ********************** -->
   <h4>Mannschaftsvergehen - Übersicht</h4>
   <ion-list>
-    <ion-item *ngFor="let teamPenalty of teamPenalties" click="onSelectLatestTeamPenalty(teamPenalty)">
+    <ion-item *ngFor="let teamPenalty of teamPenalties" (click)="onSelectLatestTeamPenalty(teamPenalty)">
       <ion-label>
         <h3>{{teamPenalty.penalty.cost}}</h3>
         <p>{{teamPenalty.user.name}}, Vergehen: {{teamPenalty.penalty.name}}</p>
@@ -29,7 +29,9 @@
               xmlns:xlink="http://www.w3.org/1999/xlink" 
               xml:space="preserve" 
               style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-              viewBox="0 0 500 500">
+              viewBox="0 0 500 500"
+              (click)="onSelectRemainingPenalties(userPenalties)"
+        >
           <g id="dashboard-circle">
             <circle style="fill:red;stroke:#010101;stroke-width:1.6871;stroke-miterlimit:10;" cx="250" cy="250" r="30%" /> 
             <text x="50%" y="50%" style="fill:#fff" text-anchor="middle" stroke="#51c5cf" stroke-width="2px" dy=".375em" font-size="15rem">{{userPenalties.length}}</text>
@@ -72,10 +74,10 @@
         <ion-icon name="arrow-dropup"></ion-icon>
       </ion-fab-button>
       <ion-fab-list side="top">
-          <ion-fab-button><ion-icon name="add-circle"></ion-icon></ion-fab-button>
+          <ion-fab-button><ion-icon name="add-circle" (click)="onSelectFabItem('add')"></ion-icon></ion-fab-button>
         </ion-fab-list>
         <ion-fab-list side="start">
-          <ion-fab-button><ion-icon name="create"></ion-icon></ion-fab-button>
+          <ion-fab-button><ion-icon name="create" (click)="onSelectFabItem('create')"></ion-icon></ion-fab-button>
         </ion-fab-list>
 
   </ion-fab>

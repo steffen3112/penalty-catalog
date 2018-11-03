@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 // FAKE DATA!!!!
-import { teamPenalties, userPenalty } from '../fakeDashboardData.js'
+import { teamPenalties, userPenalty } from '../fakeDashboardData.js';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -78,7 +78,7 @@ export class PenaltyService {
    * Calculates the users debts from the fake data array
    */
   getUsersDebts(): number {
-    let calculatedSum = userPenalty.map( penalty => parseFloat(penalty.penalty.cost.substring(0, penalty.penalty.cost.length - 1)) )
+    const calculatedSum = userPenalty.map( penalty => parseFloat(penalty.penalty.cost.substring(0, penalty.penalty.cost.length - 1)) )
                                     .reduce( ( a, b ) => a + b );
     return calculatedSum;
   }

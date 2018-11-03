@@ -3,7 +3,9 @@ import { Message } from './../../models/Message';
 import { AssignedPenalty } from '../../models/AssignedPenalty';
 import { Component, OnInit } from '@angular/core';
 import { PenaltyService } from '../../services/penalties/penalty.service';
-
+import { ModalController, Platform, NavParams } from '@ionic/angular';
+import { PenaltiesPage } from '../penalties/penalties.page';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -22,7 +24,12 @@ export class DashboardPage implements OnInit {
   //~ Constructors
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  constructor(private penaltyService: PenaltyService, private messengerService: MessengerService) { }
+  constructor(
+      private penaltyService: PenaltyService, 
+      private messengerService: MessengerService, 
+      public modalCtrl: ModalController, 
+      private router: Router
+  ) { }
 
   //~ Lifecycle Hooks
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,8 +84,14 @@ export class DashboardPage implements OnInit {
   /**
    * handles the click-Event of the users open remaining penalties
    */
-  onSelectRemainingPenalties() {
+  async onSelectRemainingPenalties(userPenalties: AssignedPenalty[]) {
+    
+    const modal = await this.modalCtrl.create({
+      component: PenaltiesPage,
+      componentProps: {penalties: userPenalties}
+    });
 
+    return await modal.present();
   }
 
   /**
@@ -98,8 +111,15 @@ export class DashboardPage implements OnInit {
   /**
    * handles the click-Event of the floating action button (FAB)
    */
-  onSelectFabItem() {
-
+  onSelectFabItem(fabIcon: string) {
+    
+    if (fabIcon === 'create') {
+      this.router.navigate(['/catalog']);
+    } 
+    if (fabIcon === 'add') {
+      this.router.navigate(['/myteam']);
+    }
+    
   }
 
 }
