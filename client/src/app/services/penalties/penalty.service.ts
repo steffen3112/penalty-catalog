@@ -1,8 +1,12 @@
+import { TeamPenalty } from './../../models/TeamPenalty';
 import { Injectable } from '@angular/core';
 import { Penalty } from '../../models/Penalty';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+
+// FAKE DATA
+import { teamPenalties } from '../fakeDashboardData.js'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -56,8 +60,12 @@ export class PenaltyService {
     };
   }
 
-
-
+  /**
+   * FAKE Service, uses faked Data
+   */
+  getTeamPenalties(): TeamPenalty[] {
+    return teamPenalties;
+  }
 
 }
 

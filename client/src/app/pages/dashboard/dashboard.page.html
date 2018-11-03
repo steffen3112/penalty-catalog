@@ -9,29 +9,12 @@
 
 <ion-content padding>
   <!--******************** List Mock UP ********************** -->
+  <h4>Mannschaftsvergehen - Übersicht</h4>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let teamPenalty of teamPenalties" click="onSelectLatestTeamPenalty(teamPenalty)">
       <ion-label>
-        <h3>24,74€</h3>
-        <p>Max kam zu spät</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h3>25,3€</h3>
-        <p>Niklas: Hat seine Strafe gezahlt</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h3>+25,3€</h3>
-        <p>Niklas: Hat seine Strafe gezahlt</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h3>+14,9€</h3>
-        <p>Niklas: Hat seine Strafe gezahlt</p>
+        <h3>{{teamPenalty.penalty.cost}}</h3>
+        <p>{{teamPenalty.user.name}}, Vergehen: {{teamPenalty.penalty.name}}</p>
       </ion-label>
     </ion-item>
   </ion-list>
